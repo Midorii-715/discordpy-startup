@@ -19,17 +19,3 @@ async def ping(ctx):
 
 
 bot.run(token)
-
-
-import discord
-from discord.ext import commands
-
-bot = commands.Bot(
-    command_prefix="!"
-)
-
-presence = discord.Game("Qiita") # Qiitaをプレイ中
-
-@bot.event
-async def on_ready():
-    await bot.change_presence(activity=presence)
