@@ -9,7 +9,7 @@ import sys
 import os
 
 #test
-bot = commands.Bot(command_prefix='/')
+# bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
@@ -45,7 +45,7 @@ async def on_message(message):
     if message.author.bot:
         return
     # 「/neko」と発言したら「にゃーん」が返る処理
-    if message.content == '/neko1':
+    if message.content == '/neko':
         await message.channel.send('にゃーん')
        
 @client.event
