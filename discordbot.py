@@ -21,6 +21,18 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
+    m1 ='Logged in as'
+    await message.channel.send(m1)
+    print(m1)
+    m1 =client.user.name
+    await message.channel.send(m1)
+    print(m1)
+    m1 =client.user.name
+    await message.channel.send(m1)
+    print(m1)
+    m1 ='------'
+    await message.channel.send(m1)
+    print(m1)
     await asyncio.sleep(10)
 
 
@@ -39,17 +51,13 @@ async def ping(ctx):
 @client.event
 async def neko(ctx):
     await ctx.send('nyan')
-@client.event
-async def on_message(message):
-    # メッセージ送信者がBotだった場合は無視する
-    if message.author.bot:
-        return
-    # 「/neko」と発言したら「にゃーん」が返る処理
-    if message.content == '/neko':
-        await message.channel.send('にゃーん')
+
        
 @client.event
 async def on_message(message):
+        # メッセージ送信者がBotだった場合は無視する
+    if message.author.bot:
+        return
     # 「おはよう」で始まるか調べる
     if message.content.startswith("おはよう"):
         # 送り主がBotだった場合反応したくないので
@@ -58,6 +66,9 @@ async def on_message(message):
             m = "おはようございます" + message.author.name + "さん！"
             # メッセージが送られてきたチャンネルへメッセージを送ります
             await message.channel.send(m)
+     # 「/neko」と発言したら「にゃーん」が返る処理
+    elseif message.content == '/neko':
+        await message.channel.send('にゃーん')
     
     
 @client.event
