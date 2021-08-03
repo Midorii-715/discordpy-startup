@@ -7,7 +7,7 @@ import asyncio
 import random
 import sys
 import os
-import botFunction.functions as f
+
 #test
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
