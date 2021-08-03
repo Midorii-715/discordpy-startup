@@ -48,7 +48,7 @@ async def on_message(message):
 @bot.command()
 async def words(ctx):
     await ctx.send('nyan')
-    s = input("word:")
+    s = input("word")
 
     count = 0
     for i in range(len(s)):
