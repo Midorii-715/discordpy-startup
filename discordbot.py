@@ -35,6 +35,26 @@ async def ping(ctx):
 @bot.command()
 async def neko(ctx):
     await ctx.send('nyan')
+@bot.command()
+sync def on_message(message):
+    # メッセージ送信者がBotだった場合は無視する
+    if message.author.bot:
+        return
+    # 「/neko」と発言したら「にゃーん」が返る処理
+    if message.content == '/neko1':
+        await message.channel.send('にゃーん')
+       
+    
+@bot.command()
+async def words(ctx):
+    await ctx.send('nyan')
+    s = input("word:")
 
-
+    count = 0
+    for i in range(len(s)):
+        c = s[i]
+        if ((c != " ") and (c != "-")and (c != "'")):
+            count += 1
+    print(count)
+    await ctx.send(count)
 bot.run(token)
