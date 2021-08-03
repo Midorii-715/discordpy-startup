@@ -25,21 +25,21 @@ async def on_ready():
 
 
 
-@bot.event
+@client.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
 
-@bot.command()
+@client.command()
 async def ping(ctx):
     await ctx.send('pong')
     
-@bot.command()
+@client.command()
 async def neko(ctx):
     await ctx.send('nyan')
-@bot.command()
+@client.command()
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
@@ -60,7 +60,7 @@ async def on_message(message):
             await message.channel.send(m)
     
     
-@bot.command()
+@client.command()
 async def words(ctx):
     await ctx.send('nyan')
     s = input("word")
