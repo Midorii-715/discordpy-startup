@@ -36,7 +36,7 @@ async def ping(ctx):
 async def neko(ctx):
     await ctx.send('nyan')
 @bot.command()
-sync def on_message(message):
+async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
