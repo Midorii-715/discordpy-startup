@@ -66,7 +66,7 @@ async def on_message(message):
                 count += 1
         await message.channel.send(count)
     elif message.content == '/Midorii':
-        await message.channel.send('<@!Midorii#8965>')    
+        await message.channel.send('<@!Midorii>')    
     
     
 
