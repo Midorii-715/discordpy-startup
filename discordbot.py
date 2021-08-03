@@ -11,7 +11,10 @@ import os
 #test
 # bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-client = discord.Client()
+intent=discord.Intents.all()
+intents.typing = False  # typingを受け取らないように
+client = discord.Client(intents=intents)
+
 @client.event
 async def on_ready():
     print('Logged in as')
