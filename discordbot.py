@@ -32,14 +32,14 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-@client.command()
+@client.event
 async def ping(ctx):
     await ctx.send('pong')
     
-@client.command()
+@client.event
 async def neko(ctx):
     await ctx.send('nyan')
-@client.command()
+@client.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
@@ -60,7 +60,7 @@ async def on_message(message):
             await message.channel.send(m)
     
     
-@client.command()
+@client.event
 async def words(ctx):
     await ctx.send('nyan')
     s = input("word")
