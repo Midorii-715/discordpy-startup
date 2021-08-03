@@ -62,23 +62,14 @@ async def on_message(message):
         for i in range(len(message.content)):
             m = message.content
             c = m[i]
-            if ((c != " ") and (c != "-")and (c != "'")):
+            if ((c != " ") and (c != "-")and (c != "'")and (c != "　")):
                 count += 1
         await message.channel.send(count)
+    elif message.content == '/Midorii':
+        await message.channel.send('<@!Midorii#8965>')    
     
     
-@client.event
-async def words(ctx):
-    await ctx.send('nyan')
-    s = input("word")
 
-    count = 0
-    for i in range(len(s)):
-        c = s[i]
-        if ((c != " ") and (c != "-")and (c != "'")):
-            count += 1
-    print(count)
-    await ctx.send(count)
     
     
     
