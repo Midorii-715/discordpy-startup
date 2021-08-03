@@ -14,7 +14,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 intents = discord.Intents.default()
 intents.members = True 
 
-client = discord.Client(intents=intents)
+client = discord.Client()
 
 @client.event
 async def on_ready():
