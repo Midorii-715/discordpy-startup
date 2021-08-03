@@ -21,18 +21,6 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-    m1 ='Logged in as'
-    await message.channel.send(m1)
-    print(m1)
-    m1 =client.user.name
-    await message.channel.send(m1)
-    print(m1)
-    m1 =client.user.id
-    await message.channel.send(m1)
-    print(m1)
-    m1 ='------'
-    await message.channel.send(m1)
-    print(m1)
     await asyncio.sleep(10)
 
 
@@ -69,6 +57,13 @@ async def on_message(message):
      # 「/neko」と発言したら「にゃーん」が返る処理
     elif message.content == '/neko':
         await message.channel.send('にゃーん')
+    elif message.content.startswith == '/word':
+        count = -5
+        for c in range(len(message.content)):
+            c = s[i]
+            if ((c != " ") and (c != "-")and (c != "'")):
+                count += 1
+        await message.channel.send(count)
     
     
 @client.event
