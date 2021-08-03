@@ -66,7 +66,7 @@ async def on_message(message):
                 count += 1
         await message.channel.send(count)
     elif message.content == '/Midorii':
-        member_id = Midorii#8965
+        member_id = 8965
         member = ctx.guild.get_member(member_id)
         await ctx.send(f"{member.mention} へのメンション")
             
