@@ -59,7 +59,7 @@ async def on_message(message):
         await message.channel.send('にゃーん')
     elif message.content.startswith('/word '):
         count = -5
-        for c in range(len(message.content)):
+        for i in range(len(message.content)):
             m = message.content
             c = m[i]
             if ((c != " ") and (c != "-")and (c != "'")):
