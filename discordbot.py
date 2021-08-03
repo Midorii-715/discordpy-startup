@@ -84,11 +84,11 @@ async def on_message(message):
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} 狂人")
     elif ('スターリン' in message.content) or ('ヨシフ' in message.content) or ('Stalin' in message.content)or ('Ста́лин' in message.content) :
-        member = client.get_user(member_id_eishun)
+        member = client.get_user(member_id_suginokoha)
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} 粛清")
     elif ('ソ連' in message.content) or ('ソビエト連邦' in message.content)  :
-        member = client.get_user(member_id_eishun)
+        member = client.get_user(member_id_suginokoha)
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} https://youtu.be/xSr5ewJvVig")
         
