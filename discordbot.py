@@ -19,9 +19,9 @@ member_id_nurro = 702524538692304896
 member_id_gamer = 569491014914408450
 member_id_sengoku = 569167714137014273
 member_id_syachiku = 706855638642458687
-member_id_eishun = 698837644821528606
+member_id_suginokoha = 698837644821528606
 member_id_midorii = 281764400942022657
-
+member_midorii = client.get_user(member_id_midorii)
 
 @client.event
 async def on_ready():
@@ -74,10 +74,7 @@ async def on_message(message):
                 count += 1
         await message.channel.send(count)
     elif message.content == '/Midorii':
-        
-        member = client.get_user(member_id_midorii)
-        #member = message.channel.guild.get_member(member_id)
-        await message.channel.send(f"{member.mention} へのメンション")
+        await message.channel.send(f"{member_midorii.mention} へのメンション")
     elif ('妖夢'in message.content) or ('youmu' in message.content):
         member = client.get_user(member_id_midorii)
         #member = message.channel.guild.get_member(member_id)
