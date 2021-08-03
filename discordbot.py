@@ -78,8 +78,7 @@ async def on_message(message):
         member = client.get_user(member_id_midorii)
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} へのメンション")
-    elif ('妖夢' or 'youmu') in message.content:
-        member_id = 281764400942022657
+    elif ('妖夢' or 'youmu' in message.content):
         member = client.get_user(member_id_midorii)
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} 妖夢ちゃん")
