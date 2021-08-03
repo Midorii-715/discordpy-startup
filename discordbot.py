@@ -57,7 +57,7 @@ async def on_message(message):
      # 「/neko」と発言したら「にゃーん」が返る処理
     elif message.content == '/neko':
         await message.channel.send('にゃーん')
-    elif message.content.startswith == '/word':
+    elif message.content.startswith('/word '):
         count = -5
         for c in range(len(message.content)):
             c = s[i]
