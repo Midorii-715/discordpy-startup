@@ -17,6 +17,10 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
     await asyncio.sleep(10)
 
 
@@ -44,6 +48,17 @@ async def on_message(message):
     if message.content == '/neko1':
         await message.channel.send('にゃーん')
        
+@client.event
+async def on_message(message):
+    # 「おはよう」で始まるか調べる
+    if message.content.startswith("おはよう"):
+        # 送り主がBotだった場合反応したくないので
+        if client.user != message.author:
+            # メッセージを書きます
+            m = "おはようございます" + message.author.name + "さん！"
+            # メッセージが送られてきたチャンネルへメッセージを送ります
+            await message.channel.send(m)
+    
     
 @bot.command()
 async def words(ctx):
@@ -57,4 +72,8 @@ async def words(ctx):
             count += 1
     print(count)
     await ctx.send(count)
+    
+    
+    
+    
 bot.run(token)
