@@ -73,6 +73,25 @@ async def on_message(message):
             if ((c != " ") and (c != "-")and (c != "'")and (c != "　")):
                 count += 1
         await message.channel.send(count)
+        
+    elif message.content == '/money': 
+        i = random.randint(0, 9999)
+        j = random.randint(0, 3)
+        str_unit =""
+        if j == 0:
+            str_unit = ""
+        elif j == 1:
+            str_unit = "万"
+        elif j == 2:
+            str_unit = "億"
+        elif j == 3:
+            str_unit = "兆"
+        elif j == 4:
+            str_unit = "京"
+        str_money = str(i) + str_unit
+        str_message = str_money + "円GET!"
+        await message.channel.send(f"{message.author.mention}", str_message)
+        
     elif message.content == '/Midorii':
         await message.channel.send(f"{member_midorii.mention} へのメンション")
     elif ('妖夢'in message.content) or ('youmu' in message.content):
