@@ -76,4 +76,5 @@ async def words(ctx):
     
     
     
-bot.run(token)
+#bot.run(token)
+client.run(token)
