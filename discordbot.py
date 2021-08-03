@@ -4,7 +4,13 @@ import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-await asyncio.sleep(10)
+
+
+@client.event
+async def on_ready():
+    await asyncio.sleep(10)
+
+
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -17,7 +23,9 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
     
-
+@bot.command()
+async def neko(ctx):
+    await ctx.send('nyan')
 
 
 bot.run(token)
