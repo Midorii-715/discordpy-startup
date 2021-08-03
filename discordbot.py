@@ -11,9 +11,10 @@ import os
 #test
 # bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+intents = discord.Intents.default()
+intents.members = True 
 
-
-client = discord.Client()
+client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
@@ -67,7 +68,8 @@ async def on_message(message):
         await message.channel.send(count)
     elif message.content == '/Midorii':
         member_id = 281764400942022657
-        member = message.channel.guild.get_member(member_id)
+        member = client.get_user(member_id)
+        #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} へのメンション")
             
     
