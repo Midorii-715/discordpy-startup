@@ -89,8 +89,8 @@ async def on_message(message):
         elif j == 4:
             str_unit = "京"
         str_money = str(i) + str_unit
-        str_message = str_money + "円GET!"
-        await message.channel.send(f"{message.author.mention}", str_message)
+        str_message = f"{message.author.mention}" + str_money + "円GET!"
+        await message.channel.send(str_message)
         
     elif message.content == '/Midorii':
         await message.channel.send(f"{member_midorii.mention} へのメンション")
