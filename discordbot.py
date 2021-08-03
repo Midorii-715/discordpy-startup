@@ -27,7 +27,7 @@ async def on_ready():
     m1 =client.user.name
     await message.channel.send(m1)
     print(m1)
-    m1 =client.user.name
+    m1 =client.user.id
     await message.channel.send(m1)
     print(m1)
     m1 ='------'
@@ -67,7 +67,7 @@ async def on_message(message):
             # メッセージが送られてきたチャンネルへメッセージを送ります
             await message.channel.send(m)
      # 「/neko」と発言したら「にゃーん」が返る処理
-    elseif message.content == '/neko':
+    elif message.content == '/neko':
         await message.channel.send('にゃーん')
     
     
