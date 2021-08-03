@@ -11,7 +11,7 @@ import os
 #test
 # bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-intent=discord.Intents.all()
+intents=discord.Intents.all()
 intents.typing = False  # typingを受け取らないように
 client = discord.Client(intents=intents)
 
