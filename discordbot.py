@@ -15,6 +15,8 @@ intents=discord.Intents.all()
 intents.typing = False  # typingを受け取らないように
 client = discord.Client(intents=intents)
 
+member_id_midorii = 281764400942022657
+
 @client.event
 async def on_ready():
     print('Logged in as')
@@ -66,15 +68,20 @@ async def on_message(message):
                 count += 1
         await message.channel.send(count)
     elif message.content == '/Midorii':
-        member_id = 281764400942022657
-        member = client.get_user(member_id)
+        
+        member = client.get_user(member_id_midorii)
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} へのメンション")
     elif '妖夢' in message.content:
         member_id = 281764400942022657
         member = client.get_user(member_id)
         #member = message.channel.guild.get_member(member_id)
-        await message.channel.send(f"{member.mention} へのメンション")
+        await message.channel.send(f"{member.mention} 妖夢ちゃん")
+    elif 'スターリン' in message.content:
+        member_id = 698837644821528606
+        member = client.get_user(member_id)
+        #member = message.channel.guild.get_member(member_id)
+        await message.channel.send(f"{member.mention} 粛清")
             
     
     
