@@ -98,10 +98,7 @@ async def on_message(message):
         
     elif message.content == '/Midorii':
         await message.channel.send(f"{member_midorii.mention} へのメンション")
-    elif ('妖夢'in message.content) or ('youmu' in message.content):
-        member = client.get_user(member_id_midorii)
-        #member = message.channel.guild.get_member(member_id)
-        await message.channel.send(f"{member.mention} 妖夢ちゃん")
+    fw
     elif ('狂' in message.content) or ('大魔神' in message.content) or ('サクレ' in message.content)or ('ビーフジャーキー' in message.content):
         member = client.get_user(member_id_nurro)
         #member = message.channel.guild.get_member(member_id)
@@ -114,6 +111,10 @@ async def on_message(message):
         member = client.get_user(member_id_suginokoha)
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} https://youtu.be/xSr5ewJvVig")
+    elif ('音割れ' in message.content) :
+        member = message.author
+        #member = message.channel.guild.get_member(member_id)
+        await message.channel.send(f"{member.mention} https://youtu.be/vrmcVVftseI")
         
             
     
