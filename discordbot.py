@@ -98,7 +98,6 @@ async def on_message(message):
         
     elif message.content == '/Midorii':
         await message.channel.send(f"{member_midorii.mention} へのメンション")
-    fw
     elif ('狂' in message.content) or ('大魔神' in message.content) or ('サクレ' in message.content)or ('ビーフジャーキー' in message.content):
         member = client.get_user(member_id_nurro)
         #member = message.channel.guild.get_member(member_id)
