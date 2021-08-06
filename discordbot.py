@@ -78,14 +78,18 @@ async def on_message(message):
         i = random.randint(0, 9999)
         j = random.randint(0, 3)
         str_unit =""
+        get_money = i
         if j == 0:
             str_unit = ""
         elif j == 1:
             str_unit = "万"
+            get_money *= 10**4
         elif j == 2:
             str_unit = "億"
+            get_money *= 10**8
         elif j == 3:
             str_unit = "兆"
+            get_money *= 10**12
         elif j == 4:
             str_unit = "京"
         str_money = str(i) + str_unit
