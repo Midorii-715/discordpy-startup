@@ -97,7 +97,7 @@ async def on_message(message):
         await message.channel.send(str_message)
         
     elif message.content == '/Midorii':
-        member_midorii = client.get_user(member_id_nurro)
+        member_midorii = client.get_user(member_id_midorii)
         await message.channel.send(f"{member_midorii.mention} へのメンション")
     elif ('狂' in message.content) or ('大魔神' in message.content) or ('サクレ' in message.content)or ('ビーフジャーキー' in message.content):
         member = client.get_user(member_id_nurro)
