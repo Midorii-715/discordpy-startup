@@ -1,2 +1,2 @@
 discord.py[voice]>=1.4.1
-tweepy.py[voice]>= 3.8.0
+tweepy==3.8.0
