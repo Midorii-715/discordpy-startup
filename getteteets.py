@@ -20,4 +20,4 @@ class MyStreamListener(tweepy.StreamListener):
 myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
 
-myStream.filter(follow=["suzukautako"], is_async=True)
+myStream.filter(follow=["qu_youmu"], is_async=True)
