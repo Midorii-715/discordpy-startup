@@ -79,7 +79,43 @@ async def on_message(message):
             if ((c != " ") and (c != "-")and (c != "'")and (c != "　")):
                 count += 1
         await message.channel.send(count)
-        
+    elif message.content.startswith('/roll'):
+        if('d' in message.content):
+            digit_dice = 0
+            digit_roll  = 0
+            flg_num_dice = 0
+            for i in range(len(message.content)):
+            m = message.content
+            c = m[i]
+            
+                if (c == "0") or (c == "1") or (c == "2"): or (c == "3") or (c == "4") or (c == "5") or (c == "6") or (c == "7") or (c == "8") or (c == "9"):
+                    if(flg_num_dice ==0):
+                        num_dice[digit_dice] = int(c) 
+                        digit_dice += 1
+                    elif(flg_num_dice ==1):
+                        num_roll[digit_roll] = int(c)
+                        digit_roll += 1
+                elif(c == "d"):
+                    flg_num_dice = 1
+            for j in range(digit_dice):
+                dice += num_dice[j] * 10**(digit_dice-j-1)
+            if(flg_num_dice == 0):
+                roll = 1
+            elif(flg_num_dice == 1):
+                for j in range(digit_roll):
+                    roll += num_roll[j] * 10**(digit_roll-j-1)
+            sum_res = 0
+            for k in range(roll):
+                result = random.randint(1, dice)
+                sum_res += result
+                if (k == roll-1):
+                    str_result += str(result)
+                else:
+                    str_result += str(result) + "+"
+                
+                
+        str_message = f"{message.author.mention}" + str_result + "=" + str(res)
+        await message.channel.send(str_message) 
     elif message.content == '/money': 
         i = random.randint(0, 9999)
         j = random.randint(0, 3)
@@ -137,6 +173,7 @@ async def on_message(message):
         member = client.get_user(member_id_suginokoha)
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} https://youtu.be/xSr5ewJvVig")
+
 
 @client.event
 async def tweet(ctx):
