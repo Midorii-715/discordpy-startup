@@ -1,6 +1,6 @@
 from discord.ext import commands
 import sys
-import tweepy
+#import tweepy
 import getteteets
 import os
 import traceback
