@@ -99,10 +99,10 @@ async def on_message(message):
             
                 if ((c == "0") or (c == "1") or (c == "2") or (c == "3") or (c == "4") or (c == "5") or (c == "6") or (c == "7") or (c == "8") or (c == "9")):
                     if(flg_num_dice ==0):
-                        num_dice[digit_dice] = int(c) 
+                        num_dice.append(int(c)) 
                         digit_dice += 1
                     elif(flg_num_dice ==1):
-                        num_roll[digit_roll] = int(c)
+                        num_roll.append(int(c))
                         digit_roll += 1
                 elif(c == "d"):
                     flg_num_dice = 1
