@@ -125,7 +125,7 @@ async def on_message(message):
                     str_result += str(result) + "+"
                 
                 
-        str_message = f"{message.author.mention}" + str_result + "=" + str(res)
+        str_message = f"{message.author.mention}" + str_result + "=" + str(sum_res)
         await message.channel.send(str_message) 
     elif message.content == '/money': 
         i = random.randint(0, 9999)
