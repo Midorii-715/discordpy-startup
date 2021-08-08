@@ -84,6 +84,9 @@ async def on_message(message):
             digit_dice = 0
             digit_roll  = 0
             flg_num_dice = 0
+            str_result = ""
+            num_dice = []
+            num_roll = []
             for i in range(len(message.content)):
                 m = message.content
                 c = m[i]
