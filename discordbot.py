@@ -1,5 +1,5 @@
 from discord.ext import commands
-from . import getteteets.py
+import getteteets
 import os
 import traceback
 #test
