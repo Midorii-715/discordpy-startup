@@ -1,4 +1,5 @@
 from discord.ext import commands
+from . import getteteets 
 import os
 import traceback
 #test
@@ -30,6 +31,9 @@ async def on_ready():
     print(client.user.id)
     print('------')
     await asyncio.sleep(10)
+    #twitterからのツイートを取得
+    tweetsListener = MyStreamListener()
+    tweetsListener.on_status()
 
 
 
@@ -115,6 +119,11 @@ async def on_message(message):
         member = client.get_user(member_id_suginokoha)
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} https://youtu.be/xSr5ewJvVig")
+
+@client.event
+async def tweet(ctx):
+    await ctx.send('nyan')
+        
 
         
             
