@@ -1,4 +1,5 @@
-#import tweepy
+import sys
+import tweepy
 import re
 
 consumer_key = ""
