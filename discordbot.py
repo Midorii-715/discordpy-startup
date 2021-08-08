@@ -117,6 +117,14 @@ async def on_message(message):
         member = message.author
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} https://youtu.be/vrmcVVftseI")
+    elif ('うんこ' in message.content):
+        member = message.author
+        #member = message.channel.guild.get_member(member_id)
+        await message.channel.send(f"{member.mention} うんこ💩")
+    elif ('うんち' in message.content):
+        member = message.author
+        #member = message.channel.guild.get_member(member_id)
+        await message.channel.send(f"{member.mention} うんち💩")
     elif ('ソ連' in message.content) or ('ソビエト連邦' in message.content) or ('蘇維埃社会主義共和国連邦' in message.content)or ('蘇維埃' in message.content)or ('ソビエト社会主義共和国連邦' in message.content)or ('ソビエトロシア' in message.content)or ('ソビエト' in message.content) :
         member = client.get_user(member_id_suginokoha)
         #member = message.channel.guild.get_member(member_id)
