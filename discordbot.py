@@ -1,4 +1,5 @@
 from discord.ext import commands
+import tweepy
 import getteteets
 import os
 import traceback
