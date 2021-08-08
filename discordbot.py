@@ -124,16 +124,6 @@ async def on_message(message):
 @client.event
 async def tweet(ctx):
     await ctx.send('nyan')
-        
-
-        
-            
-    
-    
-
-    
-    
-    
     
 #bot.run(token)
 client.run(token)
