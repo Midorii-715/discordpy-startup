@@ -11,6 +11,9 @@ import random
 
 import os
 
+# 迷路用
+from .maze import Maze
+
 #test
 # bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -25,6 +28,9 @@ member_id_syachiku = 706855638642458687
 member_id_suginokoha = 698837644821528606
 member_id_midorii = 281764400942022657
 member_midorii = client.get_user(member_id_midorii)
+
+# 迷路用
+maze = Maze()
 
 @client.event
 async def on_ready():
@@ -177,6 +183,8 @@ async def on_message(message):
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} https://youtu.be/xSr5ewJvVig")
 
+    # 迷路の処理
+    maze.process(message)
 
 @client.event
 async def tweet(ctx):
