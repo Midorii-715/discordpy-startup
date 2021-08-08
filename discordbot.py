@@ -118,13 +118,21 @@ async def on_message(message):
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} https://youtu.be/vrmcVVftseI")
     elif ('うんこ' in message.content) or ('unko' in message.content):
+        j = random.randint(1, 3)
         member = message.author
         #member = message.channel.guild.get_member(member_id)
-        await message.channel.send(f"{member.mention} うんこ💩")
+        if (j == 3):
+            await message.channel.send(f"{member.mention} うんこ💩")
+        elif:
+            await message.channel.send(f"{member.mention} 草")
     elif ('うんち' in message.content) or ('unchi' in message.content):
+        j = random.randint(1, 3)
         member = message.author
         #member = message.channel.guild.get_member(member_id)
-        await message.channel.send(f"{member.mention} うんち！w")
+        if (j == 3):
+            await message.channel.send(f"{member.mention} うんち！w")
+        elif:
+            await message.channel.send(f"{member.mention} 草")
     elif ('ソ連' in message.content) or ('ソビエト連邦' in message.content) or ('蘇維埃社会主義共和国連邦' in message.content)or ('蘇維埃' in message.content)or ('ソビエト社会主義共和国連邦' in message.content)or ('ソビエトロシア' in message.content)or ('ソビエト' in message.content) :
         member = client.get_user(member_id_suginokoha)
         #member = message.channel.guild.get_member(member_id)
