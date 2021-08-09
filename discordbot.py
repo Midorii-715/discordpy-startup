@@ -124,7 +124,7 @@ async def on_message(message):
         if(flg_num_dice == 0):
              str_message = f"{message.author.mention}" + "さいころの出目：" + str_result
         elif(flg_num_dice == 1):
-            str_message = f"{message.author.mention}" + "さいころの出目：" + str_result + "= " + str(sum_res)
+            str_message = f"{message.author.mention}" + "さいころの出目：" + str_result + " = " + str(sum_res)
         await message.channel.send(str_message) 
     elif message.content == '/money': 
         i = random.randint(0, 9999)
