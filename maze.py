@@ -188,14 +188,16 @@ class Maze:
                        [1,1,1,1,0,1,1,1,1]]
 
     def __next(self, message):
+        player = self.__player[message.author.display_name]
+
         send_msg = '次は'
-        if self.__can_up(message) == self.__ROAD:
+        if self.__can_up(player.x, player.y) == self.__ROAD:
             send_msg += '上 '
-        if self.__can_down(message) == self.__ROAD:
+        if self.__can_down(player.x, player.y) == self.__ROAD:
             send_msg += '下 '
-        if self.__can_left(message) == self.__ROAD:
+        if self.__can_left(player.x, player.y) == self.__ROAD:
             send_msg += '左 '
-        if self.__can_right(message) == self.__ROAD:
+        if self.__can_right(player.x, player.y) == self.__ROAD:
             send_msg += '右 '
         send_msg += 'に進めそうだ。'
         return send_msg
@@ -277,12 +279,16 @@ class Maze:
                 if (dir-1)%4 == self.__STALIN_UP:
                     if self.__can_up(player.stalin_x, player.stalin_y) == self.__ROAD:
                         player.stalin_y = player.stalin_y - 1
+                        break
                     elif self.__can_down(player.stalin_x, player.stalin_y) == self.__ROAD:
                         player.stalin_y = player.stalin_y + 1
+                        break
                     elif self.__can_left(player.stalin_x, player.stalin_y) == self.__ROAD:
                         player.stalin_x = player.stalin_x - 1
+                        break
                     elif self.__can_right(player.stalin_x, player.stalin_y) == self.__ROAD:
                         player.stalin_x = player.stalin_x + 1
+                        break
 
         _type, _dist = self.__stalin_visible()
         if _type == self.__STALIN_SAME:
