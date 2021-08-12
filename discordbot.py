@@ -185,7 +185,9 @@ async def on_message(message):
         await message.channel.send(f"{member.mention} https://youtu.be/xSr5ewJvVig")
 
     # 迷路の処理
-    mazes.process(message)
+    maze_msg = mazes.process(message)
+    if maze_msg != None:
+        await message.channel.send(maze_msg)
 
 @client.event
 async def tweet(ctx):
