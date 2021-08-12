@@ -36,7 +36,7 @@ class Maze:
             send_msg = self.__enter(message)
         elif message.content == '/maze enter stalin mode':
             send_msg = self.__enter(message)
-            self.__player[name].stalin_mode = False
+            self.__player[name].stalin_mode = True
             self.__player[name].stalin_name = 'スターリン'
             self.__player[name].starlin_x = self.__finish_x
             self.__player[name].starlin_y = self.__finish_y
