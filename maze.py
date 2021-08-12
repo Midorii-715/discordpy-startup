@@ -36,16 +36,16 @@ class Maze:
             send_msg = self.__enter(message)
         elif message.content == '/maze enter stalin mode':
             send_msg = self.__enter(message)
-            self.__player.stalin_mode = False
-            self.__player.stalin_name = 'スターリン'
-            self.__player.starlin_x = self.__finish_x
-            self.__player.starlin_y = self.__finish_y
+            self.__player[name].stalin_mode = False
+            self.__player[name].stalin_name = 'スターリン'
+            self.__player[name].starlin_x = self.__finish_x
+            self.__player[name].starlin_y = self.__finish_y
             if message.content[12:-5] != 'stalin':
-                self.__player.stalin_name = message.content[12:-5]
+                self.__player[name].stalin_name = message.content[12:-5]
         elif message.content == '/maze give up':
             send_msg = self.__give_up(message)
 
-        if self.__player in name:
+        if name in self.__player:
             if message.content == 'w':
                 send_msg = self.__up(message)
             elif message.content == 's':
@@ -63,7 +63,7 @@ class Maze:
                 send_msg += '\n'
                 send_msg += self.__next(message)
 
-                if self.__player.stalin_mode:
+                if self.__player[name].stalin_mode:
                     send_msg += '\n'
                     send_msg += self.__stalin_move(message)
 
@@ -92,7 +92,7 @@ class Maze:
         send_msg = ''
         name = message.author.display_name
 
-        if self.__player in name:
+        if name in self.__player:
             send_msg = '迷路の入口に戻った。'
         else:
             send_msg = '迷路に入った。'
@@ -108,7 +108,7 @@ class Maze:
         send_msg = ''
         name = message.author.display_name
 
-        if self.__player in name:
+        if name in self.__player:
             send_msg = name + 'は目の前が真っ暗になった。'
             send_msg += '\n'
             send_msg += '!!!GAME OVER!!!'
@@ -244,31 +244,32 @@ class Maze:
 
     def __stalin_move(self, message):
         send_msg = ''
-        player = self.__player[message.author.display_name]
+        name = message.author.display_name
+        player = self.__player[name]
 
         for index in range(10):
             _type, _dist = self.__stalin_visible()
             if _type == self.__STALIN_SAME:
-                send_msg = self.__player.stalin_name + 'が目の前にいる。\n🔪あなたは' + self.__player.stalin_name + 'に粛清された。🔪\nhttps://youtu.be/xSr5ewJvVig'
+                send_msg = self.__player[name].stalin_name + 'が目の前にいる。\n🔪あなたは' + self.__player[name].stalin_name + 'に粛清された。🔪\nhttps://youtu.be/xSr5ewJvVig'
                 send_msg += '\n'
                 send_msg += '!!!GAME OVER!!!'
-                self.__player.pop(message.author.display_name)
+                self.__player.pop(name)
                 return send_msg
             elif _type == self.__STALIN_UP:
-                send_msg = self.__player.stalin_name + 'が{}マス上にいる。'.format(_dist)
+                send_msg = self.__player[name].stalin_name + 'が{}マス上にいる。'.format(_dist)
                 player.stalin_y = player.stalin_y + 1
             elif _type == self.__STALIN_DOWN:
-                send_msg = self.__player.stalin_name + 'が{}マス下にいる。'.format(_dist)
+                send_msg = self.__player[name].stalin_name + 'が{}マス下にいる。'.format(_dist)
                 player.stalin_y = player.stalin_y - 1
             elif _type == self.__STALIN_LEFT:
-                send_msg = self.__player.stalin_name + 'が{}マス左にいる。'.format(_dist)
+                send_msg = self.__player[name].stalin_name + 'が{}マス左にいる。'.format(_dist)
                 player.stalin_x = player.stalin_x + 1
             elif _type == self.__STALIN_RIGHT:
-                send_msg = self.__player.stalin_name + 'が{}マス右にいる。'.format(_dist)
+                send_msg = self.__player[name].stalin_name + 'が{}マス右にいる。'.format(_dist)
                 player.stalin_x = player.stalin_x - 1
             if _type != self.__STALIN_INVISIBLE:
                 send_msg += '\n'
-                send_msg += self.__player.stalin_name + 'が近づいてきた。'
+                send_msg += self.__player[name].stalin_name + 'が近づいてきた。'
                 break
 
             dir = random.randint(1, 4)
@@ -285,10 +286,10 @@ class Maze:
 
         _type, _dist = self.__stalin_visible()
         if _type == self.__STALIN_SAME:
-            send_msg += self.__player.stalin_name + 'が目の前にいる。\n🔪あなたは' + self.__player.stalin_name + 'に粛清された。🔪\nhttps://youtu.be/xSr5ewJvVig'
+            send_msg += self.__player[name].stalin_name + 'が目の前にいる。\n🔪あなたは' + self.__player[name].stalin_name + 'に粛清された。🔪\nhttps://youtu.be/xSr5ewJvVig'
             send_msg += '\n'
             send_msg += '!!!GAME OVER!!!'
-            self.__player.pop(message.author.display_name)
+            self.__player.pop(name)
 
         return send_msg
 
