@@ -25,7 +25,7 @@ class Maze:
         self.__player = {}
         self.__make_maze()
 
-    async def process(self, message):
+    def process(self, message):
         send_msg = ''
         member =  message.author
         name = message.author.display_name
