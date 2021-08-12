@@ -7,8 +7,8 @@ class Player:
         self.y = 0
         self.stalin_mode = False
         self.stalin_name = 'スターリン'
-        self.starlin_x = 0
-        self.starlin_y = 0
+        self.stalin_x = 0
+        self.stalin_y = 0
 
 class Maze:
     __ROAD = 0
@@ -38,8 +38,8 @@ class Maze:
             send_msg = self.__enter(message)
             self.__player[name].stalin_mode = True
             self.__player[name].stalin_name = 'スターリン'
-            self.__player[name].starlin_x = self.__finish_x
-            self.__player[name].starlin_y = self.__finish_y
+            self.__player[name].stalin_x = self.__finish_x
+            self.__player[name].stalin_y = self.__finish_y
             if message.content[12:-5] != 'stalin':
                 self.__player[name].stalin_name = message.content[12:-5]
         elif message.content == '/maze give up':
