@@ -68,7 +68,9 @@ class Maze:
                     send_msg += self.__stalin_move(message)
 
         if send_msg != '':
-            await message.channel.send(f"{member.mention} " + send_msg)
+            return f"{member.mention} " + send_msg
+        else:
+            return None
 
 
 
