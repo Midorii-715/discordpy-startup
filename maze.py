@@ -50,22 +50,23 @@ class Maze:
                 send_msg = self.__up(message)
             elif message.content == 's':
                 send_msg = self.__down(message)
-            elif message.content == 'd':
-                send_msg = self.__left(message)
             elif message.content == 'a':
+                send_msg = self.__left(message)
+            elif message.content == 'd':
                 send_msg = self.__right(message)
 
-            goal_msg = self.__goal(message)
-            if goal_msg != '':
-                send_msg += '\n'
-                send_msg += goal_msg
-            else:
-                send_msg += '\n'
-                send_msg += self.__next(message)
-
-                if self.__player[name].stalin_mode:
+            if send_msg != '':
+                goal_msg = self.__goal(message)
+                if goal_msg != '':
                     send_msg += '\n'
-                    send_msg += self.__stalin_move(message)
+                    send_msg += goal_msg
+                else:
+                    send_msg += '\n'
+                    send_msg += self.__next(message)
+
+                    if self.__player[name].stalin_mode:
+                        send_msg += '\n'
+                        send_msg += self.__stalin_move(message)
 
         if send_msg != '':
             return f"{member.mention} " + send_msg
@@ -80,8 +81,8 @@ class Maze:
         send_msg += '/maze enter stalin mode: スターリンモード。上級者向け。\n'
         send_msg += 'w:                       上へ行く。迷路に入っているときのみ有効。\n'
         send_msg += 's:                       下へ行く。迷路に入っているときのみ有効。\n'
-        send_msg += 'd:                       左へ行く。迷路に入っているときのみ有効。\n'
-        send_msg += 'a:                       右へ行く。迷路に入っているときのみ有効。\n'
+        send_msg += 'a:                       左へ行く。迷路に入っているときのみ有効。\n'
+        send_msg += 'd:                       右へ行く。迷路に入っているときのみ有効。\n'
         send_msg += '/maze give up:           迷路から出る。\n'
         send_msg += '\n'
         send_msg += 'ゴールすると自動的に迷路から出る。\n'
