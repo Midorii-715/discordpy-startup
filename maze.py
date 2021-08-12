@@ -253,7 +253,7 @@ class Maze:
         for index in range(10):
             _type, _dist = self.__stalin_visible(message)
             if _type == self.__STALIN_SAME:
-                send_msg = self.__player[name].stalin_name + 'が目の前にいる。\n🔪あなたは' + self.__player[name].stalin_name + 'に粛清された。🔪\nhttps://youtu.be/xSr5ewJvVig'
+                send_msg = self.__player[name].stalin_name + 'が目の前にいる。\n🔪あなたは' + self.__player[name].stalin_name + 'に粛清された。🔪\nhttps://youtu.be/vrmcVVftseI'
                 send_msg += '\n'
                 send_msg += '!!!GAME OVER!!!'
                 self.__player.pop(name)
@@ -293,7 +293,7 @@ class Maze:
 
         _type, _dist = self.__stalin_visible(message)
         if _type == self.__STALIN_SAME:
-            send_msg += self.__player[name].stalin_name + 'が目の前にいる。\n🔪あなたは' + self.__player[name].stalin_name + 'に粛清された。🔪\nhttps://youtu.be/xSr5ewJvVig'
+            send_msg += self.__player[name].stalin_name + 'が目の前にいる。\n🔪あなたは' + self.__player[name].stalin_name + 'に粛清された。🔪\nhttps://youtu.be/vrmcVVftseI'
             send_msg += '\n'
             send_msg += '!!!GAME OVER!!!'
             self.__player.pop(name)

@@ -186,11 +186,11 @@ async def on_message(message):
 
     # 迷路の処理
     maze_msg = mazes.process(message)
-    if '粛清' in maze_msg:
-        member = client.get_user(member_id_suginokoha)
-        maze_msg += '\n'
-        maze_msg += f"{member.mention} 🎉おめでとう！🎉\n死が全てを解決する。人間が存在しなければ、問題も存在しないのだ。"
     if maze_msg != None:
+        if '粛清' in maze_msg:
+            member = client.get_user(member_id_suginokoha)
+            maze_msg += '\n'
+            maze_msg += f"{member.mention} 🎉おめでとう！🎉\n死が全てを解決する。人間が存在しなければ、問題も存在しないのだ。"
         await message.channel.send(maze_msg)
 
 @client.event
