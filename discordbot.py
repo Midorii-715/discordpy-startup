@@ -155,7 +155,7 @@ async def on_message(message):
         member = client.get_user(member_id_nurro)
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} 狂人")
-    elif ('スターリン' in message.content) or ('ヨシフ' in message.content) or ('Stalin' in message.content)or ('Ста́лин' in message.content) :
+    elif ('スターリン' in message.content) or ('ヨシフ' in message.content) or ('Stalin' in message.content)or ('Ста́лин' in message.content)or ('Сталин' in message.content) :
         member = client.get_user(member_id_suginokoha)
         #member = message.channel.guild.get_member(member_id)
         await message.channel.send(f"{member.mention} 粛清")
