@@ -10,7 +10,6 @@ Hololive = {
         "ときのそら",
         "https://yt3.ggpht.com/a/AATXAJzGvZJuJ92qM5WcfBcDZqPFSj_CGIEYp9VFmA=s288-c-k-c0xffffffff-no-rj-mo"
     ],
-    ...
     "UC1uv2Oq6kNxgATlCiez59hw": [
         "常闇トワ",
         "https://yt3.ggpht.com/a/AATXAJxqyp7DhLSSrSYRc5HaLcq5QvJvRp3jDnxTeA=s288-c-k-c0xffffffff-no-rj-mo"
@@ -18,7 +17,7 @@ Hololive = {
     "UCa9Y57gfeY0Zro_noHRVrnw": [
         "姫森ルーナ",
         "https://yt3.ggpht.com/a/AATXAJzzirDjRJkofWVeoE6gVjodJ0VXaJhy4b_CLg=s288-c-k-c0xffffffff-no-rj-mo"
-    ],
+    ]
 
 } #配信者のチャンネルID, 配信者名, アイコン画像のURLのリスト
 
