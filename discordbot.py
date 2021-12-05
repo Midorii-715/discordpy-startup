@@ -8,6 +8,7 @@ import traceback
 import discord
 import asyncio
 import random
+import notice_hololive
 
 import os
 
