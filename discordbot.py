@@ -8,7 +8,7 @@ import traceback
 import discord
 import asyncio
 import random
-import notice_hololive
+#import notice_hololive
 
 import os
 
@@ -203,5 +203,3 @@ async def tweet(ctx):
 #bot.run(token)
 client.run(token)
 
-while True:
-       holon = notice_hololive.Holo_live()
