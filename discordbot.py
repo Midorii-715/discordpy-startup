@@ -29,6 +29,7 @@ member_id_syachiku = 706855638642458687
 member_id_suginokoha = 698837644821528606
 member_id_midorii = 281764400942022657
 member_midorii = client.get_user(member_id_midorii)
+holon = notice_hololive.Hololive()
 
 # 迷路用
 mazes = maze.Maze()
