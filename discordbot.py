@@ -40,15 +40,13 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
+    holon = notice_hololive.Holo_live()
     await asyncio.sleep(10)
     #twitterからのツイートを取得
     #tweetsListener = MyStreamListener()
     #tweetsListener.on_status()
 
-@client.event
-async def hololive_stream(ctx):
-    holon = notice_hololive.Holo_live()
-    await ctx.send('holotest')
+
 
 @client.event
 async def on_command_error(ctx, error):
