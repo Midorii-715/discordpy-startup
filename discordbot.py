@@ -1,10 +1,10 @@
 from discord.ext import commands
 import sys
-#import tweepy
+import tweepy
 import getteteets
 import os
 import traceback
-#test
+
 import discord
 import asyncio
 import random
@@ -41,8 +41,8 @@ async def on_ready():
     print('------')
     await asyncio.sleep(10)
     #twitterからのツイートを取得
-    tweetsListener = MyStreamListener()
-    tweetsListener.on_status()
+    #tweetsListener = MyStreamListener()
+    #tweetsListener.on_status()
 
 
 
