@@ -132,7 +132,7 @@ def post_broadcast_schedule(userId, videoId, starttime):
     requests.post(webhook_url_Hololive_yotei, main_content)
 while True:
     now_time = datetime.now() + timedelta(hours=9)
-    if(((now_time.year > 2020) or ((now_time.year == 2020) and (now_time.month >= 6) and (now_time.day >= 22))) and (now_time.minute == 0) and (now_time.hour % 2 == 0)):
+    if((now_time.minute == 0) and (now_time.hour % 2 == 0)):
         get_information()
     check_schedule(now_time, broadcast_data)
     time.sleep(60)
