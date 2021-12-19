@@ -48,10 +48,10 @@ class Hololive:
         t = u[1].split(":")
         time = [int(a[0]), int(a[1]), int(u[0]), int(t[0]), int(t[1]), int(t[2])]
         if(time[3] >= 15):
-        time[2] += 1
-        time[3] = time[3] + 9 - 24
+            time[2] += 1
+            time[3] = time[3] + 9 - 24
         else:
-        time[3] += 9
+            time[3] += 9
         return (str(time[0]) + "/" + str(time[1]).zfill(2) + "/" + str(time[2]).zfill(2) + " " + str(time[3]).zfill(2) + "-" + str(time[4]).zfill(2) + "-" + str(time[5]).zfill(2))
 
     def post_to_discord(userId, videoId):
