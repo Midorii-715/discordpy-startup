@@ -8,7 +8,8 @@ import json
 import copy
 from datetime import datetime, timedelta, timezone
 
-#配信者のチャンネルID, 配信者名, アイコン画像のURLのリスト
+class Hololive:
+    #配信者のチャンネルID, 配信者名, アイコン画像のURLのリスト
 Hololive = {
     "UCp6993wxpyDPHUpavwDFqgg": [
         "ときのそら",
@@ -131,8 +132,11 @@ def post_broadcast_schedule(userId, videoId, starttime):
 
     requests.post(webhook_url_Hololive_yotei, main_content)
 while True:
+
     now_time = datetime.now() + timedelta(hours=9)
     if((now_time.minute == 0) and (now_time.hour % 2 == 0)):
         get_information()
     check_schedule(now_time, broadcast_data)
     time.sleep(60)
+
+    
