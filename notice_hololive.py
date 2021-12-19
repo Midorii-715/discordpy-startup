@@ -8,8 +8,8 @@ import json
 import copy
 from datetime import datetime, timedelta, timezone
 
-class Hololive:
-    #配信者のチャンネルID, 配信者名, アイコン画像のURLのリスト
+
+#配信者のチャンネルID, 配信者名, アイコン画像のURLのリスト
 Hololive = {
     "UCp6993wxpyDPHUpavwDFqgg": [
         "ときのそら",
