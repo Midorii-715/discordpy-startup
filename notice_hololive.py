@@ -24,8 +24,8 @@ Hololive = {
 
 } #配信者のチャンネルID, 配信者名, アイコン画像のURLのリスト
 
-webhook_url_Hololive = '配信開始チャンネル用のwebhookリンク' #ホロライブ配信開始
-webhook_url_Hololive_yotei = '配信開始予定用のwebhookリンク' #ホロライブ配信予定
+webhook_url_Hololive = 'https://discord.com/api/webhooks/922085339819044894/uoYC-z5Q2zXTA_J5-UklW8WlSb4ECpCwgUKGNRBpioq32HTo0r4pGyQQGWetSg_TUGLt' #ホロライブ配信開始
+webhook_url_Hololive_yotei = 'https://discord.com/api/webhooks/922085778333507604/UvJ9tIiBRxUSbPL14YWe2PZwycRV_nMXAZ3GOHJ3N8qXGCHf24-cMpgFzPlislkC9kqY' #ホロライブ配信予定
 broadcast_data = {} #配信予定のデータを格納
 
 YOUTUBE_API_KEY = ["AIzaSyC45K7Ldj3l9Rjoub4QaedDC3atwYN9Ze8"]
