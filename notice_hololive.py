@@ -1,4 +1,7 @@
-
+##########################################################
+# Hololive Live Stream Notification                      #
+# https://qiita.com/k0gane_p/items/4796d0e80097f93af656  #
+##########################################################
 import time
 import requests
 import json
